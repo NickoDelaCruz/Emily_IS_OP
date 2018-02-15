@@ -20,6 +20,6 @@ post('/') do
 end
 
 get('/output/:id') do
-  @item = Contact.find(params[:id])
+  @contact = Contact.find(params[:id])
   erb(:output)
 end
