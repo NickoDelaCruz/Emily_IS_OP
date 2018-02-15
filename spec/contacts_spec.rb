@@ -53,5 +53,5 @@ describe("Contact") do
       expect(Contact.find(2)).to(eq(contact2))
     end
   end
-
+  
 end

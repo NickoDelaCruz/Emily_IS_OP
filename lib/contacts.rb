@@ -2,6 +2,7 @@ class Contact
   @@list = []
 
   attr_accessor :first, :last, :title, :company
+
   attr_reader :id
 
   def initialize(attributes)
