@@ -13,7 +13,16 @@ class Contact
     @company = attributes.fetch(:company)
   end
 
+  def self.all()
+    @@list
+  end
+
+  def self.clear()
+    @@list = []
+  end
+
   def save()
+    @@list.push(self)
 
   end
 
