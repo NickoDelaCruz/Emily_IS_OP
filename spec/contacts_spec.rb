@@ -32,4 +32,26 @@ describe("Contact") do
     end
   end
 
+  describe("#id") do
+    it("increments an id by 1 each time a new item is added") do
+      contact = Contact.new({:first=> 'Emily', :last=> 'Watkins' , :title=> "Rich", :company=> 'Nike'})
+      contact.save()
+      contact2 = Contact.new({:first=> 'Nicko', :last=> 'De la Cruz' , :title=> "double rich", :company=> 'spacex'})
+      contact2.save()
+      expect(contact.id()).to(eq(1))
+      expect(contact2.id()).to(eq(2))
+    end
+  end
+
+  describe(".find") do
+    it("finds an item based on its id") do
+      contact = Contact.new({:first=> 'Emily', :last=> 'Watkins' , :title=> "Rich", :company=> 'Nike'})
+      contact.save()
+      contact2 = Contact.new({:first=> 'Nicko', :last=> 'De la Cruz' , :title=> "double rich", :company=> 'spacex'})
+      contact2.save()
+      expect(Contact.find(1)).to(eq(contact))
+      expect(Contact.find(2)).to(eq(contact2))
+    end
+  end
+
 end
