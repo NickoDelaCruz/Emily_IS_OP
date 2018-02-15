@@ -1,8 +1,8 @@
 
 <h2>Contacts</h2>
 
-<% @list.each do |item| %>
-  <h4><a href="/contact/<%= item.id %>"><%= item.name %></a></h4>
+<% @list.each do |contact| %>
+  <h4><a href="/output/<%= contact.id %>"><%= contact.first + " " + contact.last %></a></h4>
 <% end %>
 
 <h4>Add your contacts: </h4>

@@ -13,7 +13,7 @@ post('/') do
   last = params["last"]
   title = params["title"]
   company = params["company"]
-  contact = Contact.new(first, last, title, company)
+  contact = Contact.new({:first=> first, :last=> last , :title=> title, :company=> company})
   contact.save()
   @list = Contact.all()
   erb(:input)
