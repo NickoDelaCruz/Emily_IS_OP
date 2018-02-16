@@ -1,3 +1,28 @@
+class Address
+  @@address_list = []
+
+  attr_accessor :street, :city, :state, :zip
+
+  def initialize(attributes)
+    @street = attributes.fetch(:street)
+    @city = attributes.fetch(:city)
+    @state = attributes.fetch(:state)
+    @zip = attributes.fetch(:zip)
+  end
+
+  def self.all()
+    @@address_list
+  end
+
+  def self.clear()
+    @@address_list = []
+  end
+
+  def save()
+    @@address_list.push(self)
+  end
+end
+
 class Contact
   @@list = []
 
